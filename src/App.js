@@ -4,7 +4,6 @@ import axios from 'axios';
 function App() {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState('');
-  const [id, setID] =useState(''); 
   const apiUrl1 = 'https://879xdukmr4.execute-api.us-east-1.amazonaws.com/Prod/users/get'; // Thay đổi URL API của bạn
   const apiUrl2 = 'https://879xdukmr4.execute-api.us-east-1.amazonaws.com/Prod/users';
   useEffect(() => {
@@ -22,7 +21,7 @@ function App() {
 
   const handleCreateUser = async () => {
     try {
-      await axios.post(`${apiUrl2}`, { id,name });
+      await axios.post(`${apiUrl2}`, {name });
       setName('');
       fetchUsers(); // Refresh user list after creation
     } catch (error) {
@@ -45,12 +44,6 @@ function App() {
       </div>
       <div>
         <h2>Create New User</h2>
-        <input
-          type="text"
-          value={id}
-          onChange={e => setID(e.target.value)}
-          placeholder="Enter id"
-        />
         <input
           type="text"
           value={name}
