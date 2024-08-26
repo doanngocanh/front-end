@@ -1,0 +1,72 @@
+{
+  "api": {
+    "apigetuser": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "GetUserFunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "PostUserFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "GetUserFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "PostUserFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_GetUserFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetUserFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_GetUserFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GetUserFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_PostUserFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PostUserFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_PostUserFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PostUserFunction"
+        }
+      ]
+    }
+  }
+}

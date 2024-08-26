@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/users/get": {
+      "name": "/users/get",
+      "lambdaFunction": "GetUserFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/users": {
+      "name": "/users",
+      "lambdaFunction": "PostUserFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
